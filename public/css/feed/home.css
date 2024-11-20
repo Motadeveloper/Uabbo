@@ -1,0 +1,290 @@
+.toggle-comments-btn {
+    margin: 0 auto;
+}
+
+#createTopicBox button {
+    font-size: 1em;
+}
+body {
+    background-color:#f5f5f5;
+}
+
+#createTopicBox {
+    background-color: #ffffff; /* Fundo branco */
+    border: none; /* Remove qualquer borda padrão */
+    border-radius: 10px; /* Arredondamento leve da caixa */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    position: relative; /* Necessário para a animação */
+    overflow: hidden; /* Garante que a borda inferior animada fique integrada */
+}
+
+/* Cria a borda inferior animada */
+#createTopicBox::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px; /* Altura da borda */
+    background: linear-gradient(90deg, #1e90ff, #00bfff, #8a2be2, #ff1493); /* Gradiente de cores */
+    background-size: 300%; /* Para animação mais fluida */
+    animation: animate-border 3s linear infinite; /* Animação contínua */
+}
+    
+/* Animação para mover o gradiente horizontalmente */
+@keyframes animate-border {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Botão estilizado para o "X" */
+.btn-close-custom {
+    width: 30px; /* Largura do botão */
+    height: 30px; /* Altura do botão */
+    border: none; /* Remove bordas padrão */
+    background: transparent; /* Fundo transparente */
+    position: absolute; /* Para posicionar no card */
+    top: 10px; /* Distância do topo */
+    right: 10px; /* Distância da direita */
+    cursor: pointer; /* Cursor pointer para interação */
+    transition: transform 0.3s ease; /* Animação para interação */
+}
+
+/* Criação do "X" com pseudo-elementos */
+.btn-close-custom::before,
+.btn-close-custom::after {
+    content: ''; /* Pseudo-elemento vazio */
+    position: absolute; /* Posicionamento absoluto dentro do botão */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    width: 20px; /* Comprimento da linha do "X" */
+    height: 2px; /* Espessura da linha do "X" */
+    background-color: #495057; /* Cor das linhas */
+    border-radius: 2px; /* Arredondamento para suavizar as linhas */
+    transition: all 0.3s ease; /* Suaviza as transições */
+}
+
+/* Linha diagonal do "X" */
+.btn-close-custom::before {
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotação para criar a primeira linha */
+}
+
+/* Linha oposta do "X" */
+.btn-close-custom::after {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotação oposta para a segunda linha */
+}
+
+/* Efeito de interação ao passar o mouse */
+.btn-close-custom:hover {
+    transform: scale(1.2); /* Ampliação leve ao passar o mouse */
+}
+
+/* Efeito nas linhas ao passar o mouse */
+.btn-close-custom:hover::before,
+.btn-close-custom:hover::after {
+    background-color: #1e90ff; /* Altera a cor das linhas ao passar o mouse */
+}
+
+/* Linha diagonal do "X" */
+.btn-close-custom::before {
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotação para criar a primeira linha */
+}
+
+/* Linha oposta do "X" */
+.btn-close-custom::after {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Rotação oposta para a segunda linha */
+}
+
+/* Efeito de interação ao passar o mouse */
+.btn-close-custom:hover {
+    transform: scale(1.2); /* Ampliação leve ao passar o mouse */
+}
+
+/* Efeito nas linhas ao passar o mouse */
+.btn-close-custom:hover::before,
+.btn-close-custom:hover::after {
+    background-color: #1e90ff; /* Altera a cor das linhas ao passar o mouse */
+}
+
+/* Botão verde com alinhamento e espaçamento do ícone */
+#publishButton {
+    background-color: #28a745; /* Cor verde */
+    border: 1px solid #28a745; /* Cor da borda */
+    color: white; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+    border-radius: 5px; /* Arredondamento do botão */
+    padding: 8px 12px; /* Espaçamento interno */
+    transition: all 0.3s ease; /* Suavização para hover */
+}
+
+#publishButton:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
+    border-color: #1e7e34;
+}
+
+#publishButton img {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Estilo da mensagem de sucesso */
+.alert-success-custom {
+    background-color: #d4edda; /* Fundo verde claro */
+    color: #155724; /* Texto verde escuro */
+    border: none; /* Remove borda */
+    border-radius: 5px; /* Arredondamento suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex; /* Alinhamento flexível */
+    align-items: center; /* Alinha verticalmente os itens */
+    padding: 10px 15px; /* Espaçamento interno */
+    margin-bottom: 15px; /* Espaçamento externo */
+}
+
+/* Ajuste para o ícone */
+.alert-success-custom img {
+    width: 44px; /* Largura do ícone */
+    height: 40px; /* Altura do ícone */
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Estilo padrão para os botões */
+button.btn, a.btn {
+    padding: 10px 20px; /* Tamanho padrão do botão */
+    font-size: 16px; /* Tamanho padrão do texto */
+    display: flex; /* Alinhamento do ícone com o texto */
+    align-items: center; /* Centralização vertical */
+}
+
+/* Ajustes mais compactos para dispositivos móveis */
+@media (max-width: 768px) {
+    button.btn, a.btn {
+        padding: 5px 10px; /* Espaçamento interno menor */
+        font-size: 12px; /* Reduz o tamanho do texto */
+    }
+
+    button.btn img, a.btn img {
+        width: 20px; /* Reduz ainda mais a largura do ícone */
+        height: auto; /* Mantém a proporção do ícone */
+        margin-right: 4px; /* Reduz o espaçamento do ícone */
+    }
+}
+
+/* Estilo dos cards individuais dos tópicos */
+.topic-card {
+    background-color: #ffffff; /* Fundo branco */
+    border: none; /* Remove qualquer borda */
+    border-radius: 8px; /* Opcional: arredondamento das bordas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar o card */
+    padding: 15px; /* Opcional: espaçamento interno */
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.topic-card {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Estilo do indicador de carregamento */
+#loadingIndicator img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topic-card {
+    animation: fadeIn 0.5s ease-out;
+    background-color: #fff; /* Fundo branco */
+    border: none; /* Remove bordas */
+    border-radius: 8px; /* Arredondamento leve */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para o indicador de carregamento */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+#topicsContainer {
+    margin-top: 20px;
+}
+
+.topic-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#reportHabboForm .d-flex {
+    align-items: center;
+    gap: 15px; /* Espaçamento entre a imagem e o texto */
+}
+
+#habboAvatarImage {
+    border: 2px solid #fff; /* Borda leve na imagem */
+    padding: 5px; /* Espaçamento interno */
+    border-radius: 5px; /* Arredondamento */
+    background-color: #fff;
+}
+
+#postReportButton {
+    display: none; /* Inicialmente oculto */
+}
+
+#postReportButton.show {
+    display: inline-block; /* Exibido quando necessário */
+}
+
+
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+}
+
+.btn-link {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+}

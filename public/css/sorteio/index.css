@@ -1,0 +1,177 @@
+    body {
+        background-color: #f5f5f5;
+    }
+
+    .card-sorteio {
+        position: relative;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        overflow: hidden;
+        border: none;
+        display: flex;
+        flex-direction: column; /* Força layout em coluna */
+        gap: 20px;
+    }
+
+    .card-sorteio::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #ff6ec4, #7873f5, #42a5f5, #00c6ff, #ff6ec4);
+        background-size: 200% 100%;
+        animation: animateBottomBorder 3s linear infinite;
+        border-radius: 0 0 8px 8px;
+    }
+
+    @keyframes animateBottomBorder {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+
+    .carousel-container {
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .carousel {
+        display: flex;
+        gap: 15px;
+        animation: scrollCarousel 20s linear infinite;
+    }
+
+    .mini-card {
+        width: 80px;
+        text-align: center;
+    }
+
+    .mini-card img {
+        width: 54px;
+        height: 62px;
+    }
+
+    .participant-name {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    @keyframes scrollCarousel {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .author-name {
+        text-transform: uppercase;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .sorteio-content {
+        flex-grow: 1;
+    }
+
+    .premios-section {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        margin-top: 15px;
+    }
+
+    .premios-list {
+        padding: 0;
+        list-style: none;
+    }
+
+    .premios-list .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    /* Estilos responsivos para mobile */
+    @media (max-width: 768px) {
+        .card-sorteio {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .author-section, 
+        .sorteio-content, 
+        .carousel-container, 
+        .premios-section {
+            width: 100%;
+        }
+
+        /* Força a seção de premiações a ficar abaixo dos participantes */
+        .premios-section {
+            order: 3;
+            width: 100%; /* Ocupa toda a largura */
+            margin-top: 15px;
+        }
+
+        .carousel-container {
+            order: 2;
+            width: 100%;
+        }
+
+        .sorteio-content {
+            order: 1;
+            width: 100%;
+        }
+
+        .author-section {
+            order: 0;
+            width: 100%;
+            text-align: center; /* Centraliza o autor em mobile */
+        }
+
+        /* Ajusta a lista de premiações para visualização empilhada */
+        .premios-list .list-group-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+
+    .custom-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none; /* Remove sublinhado padrão do link */
+        background: linear-gradient(to bottom, #fea614 50%, #febc3d 50%);
+        border: 2px solid #fca61d;
+        border-radius: 5px; /* Ajuste para bordas arredondadas ou deixe 0 para bordas quadradas */
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+    
+    .custom-button:hover {
+        transform: scale(1.02); /* Efeito de hover */
+    }
+    
+    .button-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px; /* Espaço entre a imagem e o texto */
+        margin-right: 10px; /* Espaço entre a imagem e o texto */
+        
+    }
+    
